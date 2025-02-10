@@ -8,9 +8,13 @@ public class EnemySpawner : MonoBehaviour
 
     private Vector3 _enemyPosition;
 
+    public GameObject gameManager;
+    public GameManager gameManagerScript;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+           
         StartCoroutine(SpawnEnemy(3f));
     }
 
@@ -22,7 +26,9 @@ public class EnemySpawner : MonoBehaviour
 
     private IEnumerator SpawnEnemy(float seconds)
     {
-        while (true)
+        gameManagerScript = gameManager.GetComponent<GameManager>();
+
+        while (gameManagerScript.isGameOver == false)
         {
             _enemyPosition = new Vector3(Random.Range(-8, 8), 6.20f, 0);
             yield return new WaitForSeconds(seconds);

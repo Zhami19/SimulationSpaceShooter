@@ -5,6 +5,7 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField]
     private float _speed = 1;
+    
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -23,7 +24,8 @@ public class Enemy : MonoBehaviour
     {
         if (transform.position.y <= -6)
         {
-            Destroy(gameObject);
+            GameManager gameManager = FindFirstObjectByType<GameManager>();
+            gameManager.gameOver();
         }
     }
 
