@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
 
     private int score = 0;
 
+
     public bool isGameOver = false;
 
     public int Score
@@ -50,6 +51,9 @@ public class GameManager : MonoBehaviour
         isGameOver = false;
         _gameOverPanel.SetActive(false);
         score = 0;
+
+       /* PlayerLogic player = player.transform.GetComponent<PlayerLogic>();
+        player.transform = new Vector3(0, 0, 0,);*/
     }
 
     
