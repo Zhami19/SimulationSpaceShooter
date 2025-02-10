@@ -30,9 +30,7 @@ public class EnemySpawner : MonoBehaviour
             
         }
     }
-
-
-
+    
 }
 //might put the while true loop in tis own function
 //create multiple coroutines for different waiting times

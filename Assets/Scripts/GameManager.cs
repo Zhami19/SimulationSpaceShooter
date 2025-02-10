@@ -9,6 +9,17 @@ public class GameManager : MonoBehaviour
 
     private int score = 0;
 
+    public int Score
+    {
+        get { return score; }
+        set
+        {
+            score = value;
+            scoreText.text = "Score: " + score;
+        }
+    }
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -21,8 +32,5 @@ public class GameManager : MonoBehaviour
         
     }
 
-    private void Score()
-    {
-        score++;
-    }
+    
 }

@@ -32,6 +32,7 @@ public class Enemy : MonoBehaviour
         if (collision.tag == "Projectile")
         {
             Destroy(gameObject);
+            FindFirstObjectByType<GameManager>().Score += 1;
         }
     }
 
