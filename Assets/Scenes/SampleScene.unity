@@ -1135,7 +1135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rb: {fileID: 1291706267}
-  _moveSpeed: 7
+  _moveSpeed: 9
   _moveDirection: {x: 0, y: 0}
   _projectilePrefab: {fileID: 2318164172691345240, guid: 9c3a8fb55f2daa54d824d68e7b7b9846, type: 3}
   move: {fileID: -4948639522166457098, guid: 84e08a9535ed55f43802f6226a321597, type: 3}

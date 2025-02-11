@@ -50,9 +50,6 @@ public class GameManager : MonoBehaviour
     public void restart()
     {
         SceneManager.LoadScene(0);
-
-       /* PlayerLogic player = player.transform.GetComponent<PlayerLogic>();
-        player.transform = new Vector3(0, 0, 0,);*/
     }
 
     

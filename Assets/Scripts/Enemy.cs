@@ -31,19 +31,4 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    /*private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.tag == "Projectile")
-        {
-            Destroy(gameObject);
-            FindFirstObjectByType<GameManager>().Score += 1;
-        }
-        else if (collision.tag == "Faster Enemy")
-        {
-            Destroy(gameObject);
-            FindFirstObjectByType<GameManager>().Score += 3;
-        }
-    }*/
-
-
 }

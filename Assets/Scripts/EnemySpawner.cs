@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Globalization;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class EnemySpawner : MonoBehaviour
 {
@@ -15,39 +16,32 @@ public class EnemySpawner : MonoBehaviour
     public GameObject gameManager;
     public GameManager gameManagerScript;
 
-    private float _timeLeft = 20f;
-
     Coroutine co1;
     Coroutine co2;
+
+    private bool _hasIncreasedDifficulty = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        co1 = StartCoroutine(SpawnEnemy(5f));
-        co2 = StartCoroutine(SpawnFasterEnemy(10f));
+        
 
-
-        while (_timeLeft >= 0f)
-        {
-            _timeLeft -= Time.deltaTime;
-            if (_timeLeft < 1f)
-            {
-                _timeLeft = 0f;
-            }
-            Debug.Log(_timeLeft);
-        }
+        co1 = StartCoroutine(SpawnEnemy(3f));
+        co2 = StartCoroutine(SpawnFasterEnemy(6f));
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (_timeLeft == 0f)
+        if (!_hasIncreasedDifficulty && FindFirstObjectByType<GameManager>().Score == 20)
         {
+            _hasIncreasedDifficulty = true;
+
             StopCoroutine(co1);
             StopCoroutine(co2);
 
-            StartCoroutine(SpawnEnemy(3f));
-            StartCoroutine(SpawnFasterEnemy(6f));
+            StartCoroutine(SpawnEnemy(1.5f));
+            StartCoroutine(SpawnFasterEnemy(3f));
         }
     }
 
@@ -80,6 +74,3 @@ public class EnemySpawner : MonoBehaviour
     }
 
 }
-//might put the while true loop in tis own function
-//create multiple coroutines for different waiting times
-//make sure to research how to end a coroutine
