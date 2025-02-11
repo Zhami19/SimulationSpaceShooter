@@ -2,6 +2,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using TMPro.EditorUtilities;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -41,16 +42,14 @@ public class GameManager : MonoBehaviour
 
     public void gameOver()
     {
+        Debug.Log("Game Over");
         _gameOverPanel.SetActive(true);
         isGameOver = true;
     }
 
     public void restart()
     {
-        Debug.Log("Restart");
-        isGameOver = false;
-        _gameOverPanel.SetActive(false);
-        score = 0;
+        SceneManager.LoadScene(0);
 
        /* PlayerLogic player = player.transform.GetComponent<PlayerLogic>();
         player.transform = new Vector3(0, 0, 0,);*/

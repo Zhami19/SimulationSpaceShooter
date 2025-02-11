@@ -24,19 +24,26 @@ public class Enemy : MonoBehaviour
     {
         if (transform.position.y <= -6)
         {
+            Destroy(gameObject); 
+            Debug.Log("Enemy has gone below border");
             GameManager gameManager = FindFirstObjectByType<GameManager>();
             gameManager.gameOver();
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    /*private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Projectile")
         {
             Destroy(gameObject);
             FindFirstObjectByType<GameManager>().Score += 1;
         }
-    }
+        else if (collision.tag == "Faster Enemy")
+        {
+            Destroy(gameObject);
+            FindFirstObjectByType<GameManager>().Score += 3;
+        }
+    }*/
 
 
 }
